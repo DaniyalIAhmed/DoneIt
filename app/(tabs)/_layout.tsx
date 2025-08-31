@@ -1,10 +1,11 @@
 import useTheme from "@/hooks/useTheme";
 import { Ionicons } from "@expo/vector-icons";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { Tabs } from "expo-router";
 import React from "react";
 
 const TabsLayout = () => {
-  const {colors} = useTheme();
+  const { colors } = useTheme();
   return (
     <Tabs
       screenOptions={{
@@ -35,6 +36,15 @@ const TabsLayout = () => {
         }}
       />
 
+      <Tabs.Screen
+        name="ai"
+        options={{
+          title: "AI",
+          tabBarIcon: ({ color, size }) => (
+            <MaterialIcons name="auto-awesome" size={size} color={color} />
+          ),
+        }}
+      />
       <Tabs.Screen
         name="setting"
         options={{
